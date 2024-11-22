@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#! /home/jonas/ArqGitHub/CoisasEmDjango/.venv/bin/python3
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
