@@ -8,4 +8,6 @@ class Cliente(models.Model):
     salario = models.DecimalField(max_digits=10, decimal_places=2)
     idade = models.IntegerField()
     email = models.EmailField()
-    
+
+    def __str__(self):
+        return self.nome
