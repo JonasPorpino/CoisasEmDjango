@@ -12,7 +12,8 @@ class Cliente(models.Model):
     def __str__(self):
         return self.nome
 
-#criando telefones para relacionar com os clientes
+# criando telefones para relacionar com os clientes 
+# Nesse tipo é um cliente para muitos telefones
 
 class Telefone(models.Model):
     numero = models.CharField(max_length=20)
