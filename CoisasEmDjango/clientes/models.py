@@ -5,6 +5,9 @@ class CPF(models.Model):
     numero = models.CharField(max_length=15)
     data_exp = models.DateTimeField(auto_now=False)
 
+    def __str__(self):
+        return self.numero
+
 # Create your models here.
 
 class Cliente(models.Model):
