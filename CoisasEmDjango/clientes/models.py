@@ -1,5 +1,13 @@
 from django.db import models
 
+# Esse tipo de relacionamento será de muito para muitos
+
+class Departamento(models.Model):
+    nome = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nome
+
 # o tipo de relacionamento é de um para um
 class CPF(models.Model):
     numero = models.CharField(max_length=15)
@@ -17,6 +25,7 @@ class Cliente(models.Model):
     idade = models.IntegerField()
     email = models.EmailField()
     cpf = models.OneToOneField(CPF, on_delete=models.CASCADE, null=True, blank=True)# ele vem acima por questão de referência
+    departamentos = models.ManyToManyField(Departamento, blank=True)
 
     def __str__(self):
         return self.nome
