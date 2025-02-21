@@ -20,8 +20,8 @@ from clientes.views import clientes
 
 
 urlpatterns = [
-    re_path(r'^$',home),
-    re_path(r'^clientes$',clientes),
+    re_path(r'',home),
+    re_path(r'clientes/',clientes),
     re_path(r'admin/', admin.site.urls),
     
 ]
