@@ -6,8 +6,15 @@ from django.shortcuts import render
 # aqui apenas functions
 
 def home(request):
-    sexo = 'm'
-    nome = 'Mendonça'
-    return render(request,'index.html', {'sexo': sexo, 'nome': nome})
+    sexo='m'
+    nome='Afonso'
+    lista=[
+        {'nome':'Pedro','sexo':'m'},
+        {'nome':'Maria','sexo':'f'},
+        {'nome':'Joaquim','sexo':'m'},
+        {'nome':'João','sexo':'m'}
+    ]
+    data = {'lista': lista, 'sexo':sexo, 'nome':nome}
+    return render(request,'index.html', data )
 
 

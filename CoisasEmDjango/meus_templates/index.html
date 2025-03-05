@@ -3,11 +3,27 @@
 
 <!-- estrutura de decisão Jinja -->
 
-{% if  sexo == 'm' %}
-    Ola senhor {{nome}}
-{% elif sexo == 'f'%}
+{% if  sexo == 'm' or sexo == 'M' %}
+    Olá senhor {{nome}}
+{% elif sexo == 'f' or sexo == 'Fm' %}
     Olá Senhora {{nome}}
 
 {% else %}
     Olá {{nome}}
 {% endif %}
+
+<br>
+
+<!-- loop para a lista de nomes (foi criado como um dicionário em python) -->
+<ul>
+    {% for pessoa in lista %}
+        {% if  pessoa.sexo == 'm' or pessoa.sexo == 'M' %}
+            <li>Olá Sr {{pessoa.nome}}</li>
+        {% elif pessoa.sexo == 'f' or pessoa.sexo == 'F' %}
+             <li>Olá Sra {{pessoa.nome}}</li>
+
+        {% else %}
+            <li>Olá {{pessoa.nome}}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
