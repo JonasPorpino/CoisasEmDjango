@@ -1,29 +1,40 @@
+<!-- Isso vai injetar a base que existem em 'base.html' -->
 
-<h1>Olá mundo!</h1>
+{% extends "base.html" %}
 
-<!-- estrutura de decisão Jinja -->
+{% block title %} Página em Django : Testes {% endblock  %}
 
-{% if  sexo == 'm' or sexo == 'M' %}
-    Olá senhor {{nome}}
-{% elif sexo == 'f' or sexo == 'Fm' %}
-    Olá Senhora {{nome}}
+{% block main  %}
 
-{% else %}
-    Olá {{nome}}
-{% endif %}
+    <h1>Olá mundo!</h1>
 
-<br>
+    <!-- estrutura de decisão Django -->
 
-<!-- loop para a lista de nomes (foi criado como um dicionário em python) -->
-<ul>
-    {% for pessoa in lista %}
-        {% if  pessoa.sexo == 'm' or pessoa.sexo == 'M' %}
-            <li>Olá Sr {{pessoa.nome}}</li>
-        {% elif pessoa.sexo == 'f' or pessoa.sexo == 'F' %}
-             <li>Olá Sra {{pessoa.nome}}</li>
+    {% if  sexo == 'm' or sexo == 'M' %}
+        Olá senhor {{nome}}
+    {% elif sexo == 'f' or sexo == 'Fm' %}
+        Olá Senhora {{nome}}
 
-        {% else %}
-            <li>Olá {{pessoa.nome}}</li>
-        {% endif %}
-    {% endfor %}
-</ul>
+    {% else %}
+        Olá {{nome}}
+    {% endif %}
+
+    <br>
+
+    <!-- loop para a lista de nomes (foi criado como um dicionário em python) -->
+    <ul>
+        {% for pessoa in lista %}
+            {% if  pessoa.sexo == 'm' or pessoa.sexo == 'M' %}
+                <li>Olá Sr {{pessoa.nome}}</li>
+            {% elif pessoa.sexo == 'f' or pessoa.sexo == 'F' %}
+                <li>Olá Sra {{pessoa.nome}}</li>
+
+            {% else %}
+                <li>Olá {{pessoa.nome}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <button class="btn btn-info"> Não clique</button>
+
+{% endblock  %}
